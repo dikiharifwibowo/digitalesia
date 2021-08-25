@@ -8,9 +8,8 @@ export default class List extends React.Component {
       pokemon: []
     }
 
-    changePage(name) {
-      console.log(name)
-      this.props.parentCallback(name)
+    changePage(name, id) {
+      this.props.parentCallback(name, id)
     }
 
     componentDidMount() {
@@ -32,13 +31,13 @@ export default class List extends React.Component {
          <div class="bg-green-100 py-14">
          <h1 class="mt-8 text-center text-5xl text-green-600 font-bold">Pokemons List.</h1>
          <div class="grid grid-cols-1 md:grid-cols-4 px-8 justify-items-center">
-         { this.state.pokemon.map(poke =>
+         { this.state.pokemon.map((poke, index) =>
              <div class="mt-16 py-4 px-4 bg-whit w-72 bg-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-110 transition duration-500 mx-auto md:mx-0">
                  <div class="w-sm">
                  <img class="w-64" src={poke.image} alt="" />
                  <div class="mt-4 text-green-600 text-center pb-4">
                      <h1 class="text-xl font-bold mb-8">{ poke.name }</h1>
-                     <button onClick={() => this.changePage("detail")} class="py-2 px-14 rounded-full bg-green-600 text-white 
+                     <button onClick={() => this.changePage("detail", index + 1)} class="py-2 px-14 rounded-full bg-green-600 text-white 
                      hover:bg-green-500 transition duration-200">See pokemon</button>
                  </div>
                  </div>

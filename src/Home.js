@@ -9,20 +9,20 @@ export default class Home extends React.Component {
       this.state = {
         home: true,
         detail : false, 
+        pokemonId: ''
       };
       this.handleCallback = this.handleCallback.bind(this);
     }
 
-    handleCallback(name) {
+    handleCallback(name, id) {
       switch (name) {
         case "home":
           this.setState({ home: true, detail: false });
           break;
         case "detail":
-          this.setState({ home: false, detail: true });
+          this.setState({ home: false, detail: true, pokemonId: id });
           break;
       }
-      console.log(this.state.home, this.state.detail)
     }
     render() {
       return (
@@ -32,7 +32,7 @@ export default class Home extends React.Component {
                 <List parentCallback = {this.handleCallback}/>
               )}
               {this.state.detail && (
-                <Detail/>
+                <Detail dataParentToChild = {this.state.pokemonId}/>
               )}
               
           </div>
