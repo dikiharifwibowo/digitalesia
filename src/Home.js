@@ -27,7 +27,7 @@ export default class Home extends React.Component {
     render() {
       return (
           <div>
-              <Header/>
+              <Header parentCallback = {this.handleCallback}/>
               {this.state.home && (
                 <List parentCallback = {this.handleCallback}/>
               )}

@@ -1,8 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Home from "./Home";
-
-
 export default class List extends React.Component {
     state = {
       pokemon: []
