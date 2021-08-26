@@ -16,7 +16,6 @@ export default class Detail extends React.Component {
         .then(res => {
           const pokemon = res.data
           const stats = pokemon.stats; 
-          console.log("stats", stats)
           const paddedId = ('00' + id).slice(-3);
           pokemon.image = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`;
           this.setState({ pokemon: pokemon, stats: stats });
