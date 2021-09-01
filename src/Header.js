@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React from 'react';
 
 export default class Header extends React.Component {
@@ -46,7 +45,7 @@ render() {
                       href="#" onClick={() => this.changePage("home")}>Home</a>
                        <a class="w-full px-4 py-2 mt-2 text-sm font-semibold text-gray font-nunito
                       rounded-lg"
-                      href="#" onClick={() => this.changePage("home")}>Home</a>
+                      href="#" >My Poke</a>
                   </div>
                    )}
               </nav>

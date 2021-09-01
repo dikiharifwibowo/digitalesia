@@ -2,7 +2,6 @@ import React from "react";
 import Header from "./Header";
 import List from "./List";
 import Detail from "./Detail";
-
 export default class Home extends React.Component {
     constructor(props){
       super(props);
